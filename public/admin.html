@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Rezervări — Delta Gruiului</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Arial, sans-serif;background:#f2f4f7;padding:24px}
+    h1{margin:0 0 12px;color:#0f172a}
+    .card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:16px;margin-bottom:14px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    input,select,button{padding:8px;border:1px solid #cbd5e1;border-radius:8px}
+    button{background:#0ea5e9;border:none;color:#fff;font-weight:700;cursor:pointer}
+    button.secondary{background:#94a3b8}
+    button.danger{background:#ef4444}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border-bottom:1px solid #e2e8f0;padding:8px;text-align:left;font-size:14px}
+    th{background:#f8fafc;font-weight:800}
+    .muted{color:#64748b}
+    .right{margin-left:auto}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#e2e8f0;font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>Panou Admin — Rezervări</h1>
+
+  <div class="card">
+    <div class="row">
+      <label>De la: <input type="date" id="from"></label>
+      <label>Până la: <input type="date" id="to"></label>
+      <label>Bazin:
+        <select id="bazin">
+          <option value="">Toate</option>
+          <option value="Balta Păstrăv">Balta Păstrăv</option>
+          <option value="Balta din spatele autobuzului">Balta din spatele autobuzului</option>
+        </select>
+      </label>
+      <button id="filtreaza">Filtrează</button>
+      <button id="reseteaza" class="secondary">Resetează</button>
+      <span class="right muted" id="status">—</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <button id="exportCsv">Export CSV</button>
+      <span class="right muted" id="count"></span>
+    </div>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Data</th>
+          <th>Bazin</th>
+          <th>Loc</th>
+          <th>Nume</th>
+          <th>Telefon</th>
+          <th>Acțiuni</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

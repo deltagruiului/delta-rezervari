@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezervare locuri - Pescuit de zi</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f4f7; padding: 30px; color: #111; }
+    h1 { text-align: center; color: #004b23; margin-bottom: 6px; }
+    p.sub { text-align:center; margin-top:0; color:#334155 }
+    form { background:#fff; border-radius:10px; padding:20px; max-width:480px; margin:20px auto;
+           box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    label { display:block; margin-top:10px; font-weight:600; }
+    select, input, button { width:100%; padding:9px; margin-top:6px; border-radius:8px; border:1px solid #cbd5e1; font-size:15px; }
+    button { background:#0a7a33; color:#fff; border:none; cursor:pointer; margin-top:16px; font-size:16px; }
+    button:hover { background:#086429; }
+    #locuri-container { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; margin-top:14px; }
+    #mesaj { text-align:center; margin-top:14px; font-weight:600; }
+  </style>
+</head>
+<body>
+  <h1>Rezervare locuri - Pescuit de zi</h1>
+  <p class="sub"><strong>Program:</strong> 06:30 – 18:00</p>
+
+  <form id="rezervare-form">
+    <label for="bazin">Alege balta:</label>
+    <select id="bazin" name="bazin" required>
+      <option value="">-- Selectează balta --</option>
+      <option value="Balta Mare">Balta Mare</option>
+      <option value="Balta de la autobuz">Balta de la autobuz</option>
+      <option value="Balta de la capre">Balta de la capre</option>
+      <option value="Balta de la râme">Balta de la râme</option>
+    </select>
+
+    <label for="data">Alege data:</label>
+    <input type="date" id="data" name="data" required />
+
+    <div id="locuri-container"></div>
+
+    <label for="nume">Nume:</label>
+    <input type="text" id="nume" name="nume" placeholder="ex: Ion Popescu" required />
+
+    <label for="telefon">Telefon:</label>
+    <input type="tel" id="telefon" name="telefon" placeholder="ex: 07xxxxxxxx" required />
+
+    <button type="submit">Trimite rezervarea</button>
+  </form>
+
+  <div id="mesaj"></div>
+
+  <!-- Logica paginii -->
+  <script src="/js/rezervari.js"></script>
+</body>
+</html>

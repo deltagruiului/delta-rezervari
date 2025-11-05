@@ -1,0 +1,23 @@
+{
+  "name": "delta-gruiului-rezervari",
+  "version": "1.0.0",
+  "description": "Rezervari online Delta Gruiului – Node.js + SQLite + Admin UI",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon server.js",
+    "start": "node server.js",
+    "init-db": "node db.js --init"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

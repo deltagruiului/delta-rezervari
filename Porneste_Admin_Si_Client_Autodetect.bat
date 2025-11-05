@@ -1,0 +1,45 @@
+@echo off
+title Delta Gruiului - Admin + Client (Auto Detect)
+color 0A
+echo =============================================
+echo   Delta Gruiului - Admin + Client Auto Start
+echo =============================================
+
+REM schimbam pe discul D:
+D:
+
+REM intram in folderul proiectului
+cd "D:\Users\dragos ionescu\Desktop\site balta total\rezervari v2 lucru"
+
+if not exist "server.js" (
+    echo [!] Eroare: folderul nu a fost gasit!
+    pause
+    exit
+)
+
+echo.
+echo [•] Verific daca serverul ruleaza deja...
+set "PID="
+for /f "tokens=5" %%a in ('netstat -ano ^| find ":3000" ^| find "LISTENING"') do (
+    set PID=%%a
+)
+
+if defined PID (
+    echo [✔] Serverul ruleaza deja (PID %PID%)
+) else (
+    echo [!] Serverul nu este pornit. Il pornesc acum...
+    start "" cmd /k "node server.js"
+    echo [•] Astept 3 secunde pentru pornire...
+    timeout /t 3 >nul
+)
+
+echo.
+echo [→] Deschid pagina de rezervari pentru clienti...
+start "" "http://localhost:3000/rezerva.html"
+
+echo [→] Deschid panoul de administrare...
+start "" "http://localhost:3000/admin"
+
+echo.
+echo [OK] Gata. Poti folosi ambele pagini.
+exit

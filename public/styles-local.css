@@ -1,0 +1,4 @@
+/* Dacă nu vrei să atingi styles.css existent, poți folosi rapid stiluri locale */
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #e5e7eb;border-radius:999px;padding:10px 14px;text-decoration:none}
+.btn-primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+.btn-light{background:#fff;color:#111827}

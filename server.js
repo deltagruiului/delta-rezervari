@@ -24,6 +24,10 @@ const LOCURI = {
   'Balta de undiță cu copac': range(123, 139),
 };
 const BAZINE = Object.keys(LOCURI);
+// Lista completă de bazine pentru UI Admin
+app.get('/api/bazine', (req, res) => {
+  res.json({ bazine: BAZINE });
+});
 
 // ——— Asigură folderul DB
 fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });

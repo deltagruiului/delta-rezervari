@@ -196,6 +196,16 @@ app.get('/admin', (req, res) => {
 });
 
 // ——— START
+// === Pagina publică de rezervări ===
+app.get('/rezerva', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'rezerva.html'));
+});
+
+// === Panoul admin ===
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Serverul rulează pe portul ${PORT} — DB: ${DB_PATH}`);
 });
